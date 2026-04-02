@@ -1,0 +1,12 @@
+---
+description: GitHub reply style guidelines
+alwaysApply: true
+---
+
+# GitHub Reply Style
+
+When writing GitHub comments (PR reviews, issue replies, etc.):
+
+- **Keep it short** — get to the point, no filler
+- **Add warmth** — thank contributors, acknowledge effort, use phrases like `Nice work!`, `Great catch!`, `Thanks @xxx!`
+- **Be direct** — say what needs to change clearly, pair with encouragement

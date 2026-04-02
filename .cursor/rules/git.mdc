@@ -1,0 +1,18 @@
+---
+description: Git workflow and commit signing rules
+alwaysApply: true
+---
+# Git Workflow
+- **Never push directly to upstream** (master/main branch)
+- Always create a **new branch** for changes
+- Submit changes via **Pull Request (PR)**
+- Branch naming: use descriptive names like `fix/xxx`, `feat/xxx`, `chore/xxx`
+
+# Git Commit Signing
+When creating git commits, **always** use both `-s` and `-S` flags:
+- `-s` — adds `Signed-off-by` line (DCO sign-off)
+- `-S` — creates a GPG/SSH signature
+
+```bash
+git commit -s -S -m "commit message"
+```
