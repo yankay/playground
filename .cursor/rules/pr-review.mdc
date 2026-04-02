@@ -45,4 +45,8 @@ When mentioning PR or issue numbers in replies, **always include the full URL** 
 - Bad: #1234
 
 ### Comment Style
-Follow the guidelines in `github-reply-style` rule. For Prow reviews, additionally include relevant commands (`/lgtm`, `/approve`) inline with the comment.
+When writing GitHub comments (PR reviews, issue replies, etc.):
+- **Keep it short** — get to the point, no filler
+- **Add warmth** — thank contributors, acknowledge effort, use phrases like `Nice work!`, `Great catch!`, `Thanks @xxx!`
+- **Be direct** — say what needs to change clearly, pair with encouragement
+- For Prow reviews, additionally include relevant commands (`/lgtm`, `/approve`) inline with the comment

@@ -1,5 +1,5 @@
 ---
-description: PR and Issue submission templates for kubernetes-sigs/kubespray
+description: PR/Issue submission templates and cross-check workflow
 alwaysApply: true
 ---
 # PR & Issue Templates
@@ -28,3 +28,15 @@ Available templates:
 - **failing-test.yaml** — for CI/test failures
 
 Use the appropriate template; do not file a blank issue when a template matches.
+
+## Cross-Check Related Projects
+
+Before submitting PRs or Issues, check these related projects for similar issues, solutions, or PRs:
+- [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes)
+- [kubernetes/kubeadm](https://github.com/kubernetes/kubeadm)
+- [rancher/rke](https://github.com/rancher/rke)
+- [kubernetes/minikube](https://github.com/kubernetes/minikube)
+
+**What to look for**: similar issues, how they fixed it, ongoing or merged PRs addressing the same concern.
+
+**How to check**: Search each repo's Issues/PRs using keywords, use `gh search issues` and `gh search prs` for cross-repo search, and include links to related issues/PRs in the PR/Issue description.
