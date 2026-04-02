@@ -19,7 +19,7 @@ git commit -s -S -m "commit message"
 
 # Prow: invalid commit message (`do-not-merge/invalid-commit-message`)
 
-Applies to Prow-managed repos under: `kubernetes`, `kubernetes-sigs`, `llm-d`, `llm-d-incubation`.
+**Only applies to Prow-managed repos** under: `kubernetes`, `kubernetes-sigs`, `llm-d`, `llm-d-incubation`. For other projects, normal commit messages (including `Fixes #123`) are fine.
 
 Prow rejects commit messages that auto-close or reference issues. **Do not put these in commit subjects or bodies:**
 

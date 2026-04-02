@@ -1,17 +1,18 @@
 ---
-description: PR review workflow and Prow rules for kubernetes ecosystem projects
+description: PR review workflow — Prow for specific orgs, standard GitHub for others
 alwaysApply: true
 ---
 # PR Review Workflow
 
-I am a **reviewer** for Prow-managed projects under these GitHub orgs:
+## Prow-managed orgs
+
+The following GitHub orgs use **Prow** for CI/CD. When reviewing PRs in these orgs, follow the Prow flow:
 - [kubernetes](https://github.com/kubernetes)
 - [kubernetes-sigs](https://github.com/kubernetes-sigs)
 - [llm-d](https://github.com/llm-d)
 - [llm-d-incubation](https://github.com/llm-d-incubation)
 
-## Prow CI/CD Flow
-This project uses [Prow](https://github.com/kubernetes-sigs/prow). The review flow is:
+### Prow CI/CD Flow
 1. **Triage**: Review the PR for correctness and relevance
 2. **Enable CI**: If reasonable, comment `/ok-to-test` to trigger CI
 3. **Review & Approve**: After CI passes, do a thorough code review:
@@ -20,20 +21,28 @@ This project uses [Prow](https://github.com/kubernetes-sigs/prow). The review fl
 4. Both `/lgtm` and `/approve` are typically needed to merge
 5. Remind me of available Prow commands when drafting reviews
 
-## PR commit history
-Commits listed on a GitHub PR are often **consolidated**: contributors may squash or rebase; maintainers may **squash-merge** or merge. The visible commit list is **not** always a faithful step-by-step record of how the work was done.
-- When reviewing, summarizing, or explaining a PR, treat the **full PR diff** and **final tree** as the source of truth — not each commit as an isolated atomic change.
-- Prow / policy (e.g. invalid commit message, DCO) applies to commits that **land on the default branch**; after a squash merge, that is typically **one** final commit message.
-
-## Triage — When to Skip
-Before reviewing, check whether the PR should be skipped:
+### Triage — When to Skip
 - **CI failures**: PRs with **checkfail** do not need review — skip them.
 - **Awaiting reply**: If I have recently commented on the PR and no one has replied yet, **skip the review** for now. Inform me it's pending a response. Only proceed if there's been a reply or I explicitly ask to review anyway.
 
-## Linking PRs and Issues
+## Other projects (non-Prow)
+
+For repos **not** in the orgs above, follow the standard GitHub review flow:
+- Use GitHub's native **Approve / Request changes / Comment** review actions.
+- No Prow commands (`/lgtm`, `/approve`, `/ok-to-test`) — they won't work.
+- CI is triggered automatically or by project-specific mechanisms (GitHub Actions, etc.).
+
+## Common rules (all projects)
+
+### PR commit history
+Commits listed on a GitHub PR are often **consolidated**: contributors may squash or rebase; maintainers may **squash-merge** or merge. The visible commit list is **not** always a faithful step-by-step record of how the work was done.
+- When reviewing, summarizing, or explaining a PR, treat the **full PR diff** and **final tree** as the source of truth — not each commit as an isolated atomic change.
+- For Prow projects: policy (e.g. invalid commit message, DCO) applies to commits that **land on the default branch**; after a squash merge, that is typically **one** final commit message.
+
+### Linking PRs and Issues
 When mentioning PR or issue numbers in replies, **always include the full URL** — not just `#1234`. The user cannot click bare `#1234` references.
 - Good: [#1234](https://github.com/kubernetes-sigs/kubespray/pull/1234)
 - Bad: #1234
 
-## Comment Style
-Follow the guidelines in `github-reply-style` rule. Additionally for Prow reviews, include relevant commands (`/lgtm`, `/approve`) inline with the comment.
+### Comment Style
+Follow the guidelines in `github-reply-style` rule. For Prow reviews, additionally include relevant commands (`/lgtm`, `/approve`) inline with the comment.
