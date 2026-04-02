@@ -7,8 +7,8 @@ This machine is located in mainland China. Any access to international resources
 ## Default proxy setup
 - Preferred: `source /root/proxy.sh`
 - Proxy variables (from `/root/proxy.sh`):
-  - `ALL_PROXY=socks5://10.64.26.1:10808`
-  - `HTTP_PROXY=http://10.64.26.1:10809`
+  - `ALL_PROXY=socks5://10.6.108.200:10808`
+  - `HTTP_PROXY=http://10.6.108.200:10809`
   - `HTTPS_PROXY=$HTTP_PROXY`
   - Lowercase variants are also set.
 ## When to apply
