@@ -7,6 +7,7 @@ alwaysApply: true
 - Always create a **new branch** for changes
 - Submit changes via **Pull Request (PR)**
 - Branch naming: use descriptive names like `fix/xxx`, `feat/xxx`, `chore/xxx`
+- **Squash commits**: Before submitting a PR, squash all commits into **one single commit** unless there is a specific reason to keep multiple (e.g., logically independent changes that are clearer as separate commits)
 
 # Git Commit Signing
 When creating git commits, **always** use both `-s` and `-S` flags:
