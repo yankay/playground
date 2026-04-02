@@ -1,9 +1,15 @@
 ---
-description: PR review workflow, triage rules, and comment style for kubernetes-sigs/kubespray
+description: PR review workflow and Prow rules for kubernetes ecosystem projects
 alwaysApply: true
 ---
 # PR Review Workflow
-I am a **reviewer** for the kubernetes-sigs/kubespray project.
+
+I am a **reviewer** for Prow-managed projects under these GitHub orgs:
+- [kubernetes](https://github.com/kubernetes)
+- [kubernetes-sigs](https://github.com/kubernetes-sigs)
+- [llm-d](https://github.com/llm-d)
+- [llm-d-incubation](https://github.com/llm-d-incubation)
+
 ## Prow CI/CD Flow
 This project uses [Prow](https://github.com/kubernetes-sigs/prow). The review flow is:
 1. **Triage**: Review the PR for correctness and relevance
@@ -13,13 +19,21 @@ This project uses [Prow](https://github.com/kubernetes-sigs/prow). The review fl
    - `/approve` — approve for merge
 4. Both `/lgtm` and `/approve` are typically needed to merge
 5. Remind me of available Prow commands when drafting reviews
+
+## PR commit history
+Commits listed on a GitHub PR are often **consolidated**: contributors may squash or rebase; maintainers may **squash-merge** or merge. The visible commit list is **not** always a faithful step-by-step record of how the work was done.
+- When reviewing, summarizing, or explaining a PR, treat the **full PR diff** and **final tree** as the source of truth — not each commit as an isolated atomic change.
+- Prow / policy (e.g. invalid commit message, DCO) applies to commits that **land on the default branch**; after a squash merge, that is typically **one** final commit message.
+
 ## Triage — When to Skip
 Before reviewing, check whether the PR should be skipped:
 - **CI failures**: PRs with **checkfail** do not need review — skip them.
 - **Awaiting reply**: If I have recently commented on the PR and no one has replied yet, **skip the review** for now. Inform me it's pending a response. Only proceed if there's been a reply or I explicitly ask to review anyway.
+
 ## Linking PRs and Issues
 When mentioning PR or issue numbers in replies, **always include the full URL** — not just `#1234`. The user cannot click bare `#1234` references.
 - Good: [#1234](https://github.com/kubernetes-sigs/kubespray/pull/1234)
 - Bad: #1234
+
 ## Comment Style
 Follow the guidelines in `github-reply-style` rule. Additionally for Prow reviews, include relevant commands (`/lgtm`, `/approve`) inline with the comment.
